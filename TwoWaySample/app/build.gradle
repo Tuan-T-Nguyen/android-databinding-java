@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "com.example.nguyenthanhtuan.basicsample"
+        applicationId "com.example.nguyenthanhtuan.twowaysample"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -16,9 +16,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    dataBinding {
-        enabled true
-    }
 }
 
 dependencies {
@@ -29,6 +26,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    // For ViewModelActivity
-    implementation "android.arch.lifecycle:extensions:1.1.1"
+    def archLifecycleVersion = "1.1.1"
+    implementation "android.arch.lifecycle:extensions:$archLifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$archLifecycleVersion"
 }
